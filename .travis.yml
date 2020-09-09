@@ -1,0 +1,11 @@
+language: swift
+osx_image: xcode11
+
+install:
+   - gem install cocoapods --no-document --quiet
+   - swift package update
+
+script:
+   - swift build
+   - swift test
+   - pod lib lint --quick

@@ -1,9 +1,10 @@
 # AppVersion 
 ![Swift version](https://img.shields.io/badge/Swift-5.0-orange.svg)
-[![SPM Compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
-[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-brightgreen.svg)](https://github.com/CocoaPods/CocoaPods)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg)](https://github.com/Carthage/Carthage)
+[![SPM Compatible](https://img.shields.io/badge/SPM-compatible-informational.svg)](https://github.com/apple/swift-package-manager)
+[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-informational.svg)](https://github.com/CocoaPods/CocoaPods)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-informational.svg)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://github.com/hkellaway/AppVersion/blob/trunk/LICENSE)
+[![Build Status](https://travis-ci.org/hkellaway/AppVersion.svg?branch=trunk)](https://travis-ci.org/hkellaway/AppVersion)
 
 A Swift μ-Library for determining app version
 
@@ -22,7 +23,7 @@ pod 'AppVersion', :git => 'https://github.com/hkellaway/AppVersion.git', :branch
 ### Installation with Carthage
 
 ```
-github "hkellaway/AppVersion"
+github "hkellaway/AppVersion" "trunk"
 ```
 
 ## Usage
@@ -37,7 +38,7 @@ let appVersion: AppVersion? = .fromBundle
 
 ### Creation from String
 
-AppVersion can conveniently be created from strings:
+An `AppVersion` can conveniently be created from a `String`:
 
 ``` swift
 let appVersion: AppVersion = "1.2.3"
@@ -45,7 +46,7 @@ let appVersion: AppVersion = "1.2.3"
 
 ### Comparison
 
-Comparision operations (`==`, `>`, `<`, etc.) work seamlessly:
+Comparison operations (`==`, `>`, `<`, etc.) work seamlessly:
 
 ``` swift
 let minimumAppVersion: AppVersion = "2.0.0"
