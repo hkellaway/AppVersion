@@ -27,12 +27,69 @@
 
 import Foundation
 
-public struct AppVersion {
+public struct AppVersion: Comparable, Equatable, ExpressibleByStringLiteral, CustomStringConvertible {
+
+  public let major: Int
+  public let minor: Int
+  public let patch: Int
+  public let rawValue: String
     
-    public init() { }
-    
-    public func speak() -> String {
-        return "Hello World"
+  public var description: String {
+    return rawValue
+  }
+
+  public static var fromBundle: AppVersion? {
+    return (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String).flatMap(AppVersion.init(rawValue:))
+  }
+
+  public init(stringLiteral value: StringLiteralType) {
+    guard let instance = AppVersion(rawValue: value) else {
+        preconditionFailure("failed to initialize `AppVersion` using string literal '\(value)'.")
     }
-    
+    self = instance
+  }
+
+  public init?(rawValue: String) {
+    let versionComponents = Array(rawValue.components(separatedBy: ".")).map { Int($0) }.compactMap { $0 }
+
+    guard versionComponents.count == 3 else {
+      return nil
+    }
+
+    self.rawValue = rawValue
+
+    major = versionComponents[0]
+    minor = versionComponents[1]
+    patch = versionComponents[2]
+  }
+
+}
+
+// MARK: - Protocol conformance
+
+// MARK: Comparable
+
+public func <(lhs: AppVersion, rhs: AppVersion) -> Bool {
+  if lhs.major != rhs.major {
+    return lhs.major < rhs.major
+  }
+
+  if lhs.minor != rhs.minor {
+    return lhs.minor < rhs.minor
+  }
+
+  if lhs.patch != rhs.patch {
+    return lhs.patch < rhs.patch
+  }
+
+  // lhs and rhs are equal
+  return false
+}
+
+// MARK: Equatable
+
+public func ==(lhs: AppVersion, rhs: AppVersion) -> Bool {
+  return lhs.major == rhs.major
+    && lhs.minor == rhs.minor
+    && lhs.patch == rhs.patch
 }

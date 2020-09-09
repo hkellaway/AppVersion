@@ -23,8 +23,8 @@ class ViewController: UIViewController {
             versionLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
         
-        let appVersion = AppVersion().speak()
-        versionLabel.text = appVersion
+        let appVersion: AppVersion? = .fromBundle
+        versionLabel.text = "Version \(appVersion ?? "Unknown :(")"
     }
 
 

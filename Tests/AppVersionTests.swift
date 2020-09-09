@@ -10,9 +10,80 @@ import XCTest
 @testable import AppVersion
 
 class AppVersionTests: XCTestCase {
-
-    func testExample() throws {
-        XCTAssertEqual(AppVersion().speak(), "Hello World")
+    
+    let version123: AppVersion = "1.2.3"
+    
+    func test_init_fromValidString_isSuccessful() {
+        XCTAssertNotNil(AppVersion(rawValue: "2.0.0"))
+        XCTAssertNotNil(AppVersion(rawValue: "1.4.20"))
     }
-
+    
+    func test_init_fromInvalidString_isFailure() {
+        XCTAssertNil(AppVersion(rawValue: ""))
+        XCTAssertNil(AppVersion(rawValue: "0"))
+        XCTAssertNil(AppVersion(rawValue: "0.0"))
+        XCTAssertNil(AppVersion(rawValue: "1.0"))
+        XCTAssertNil(AppVersion(rawValue: "1.0.0.0"))
+    }
+    
+    func test_againstEqual_equal_isTrue() {
+        XCTAssertTrue(version123 == "1.2.3")
+    }
+    
+    func test_againstLowerMajorVersion_gte_isTrue() {
+        XCTAssertTrue(version123 >= "0.2.3")
+    }
+    
+    func test_againstLowerMinorVersion_gte_isTrue() {
+        XCTAssertTrue(version123 >= "1.1.3")
+    }
+    
+    func test_againstLowerPatchVersion_gte_isTrue() {
+        XCTAssertTrue(version123 >= "1.2.2")
+    }
+    
+    func test_againstHigherMajorVersion_gte_isFalse() {
+        XCTAssertFalse(version123 >= "2.2.3")
+    }
+    
+    func test_againstHigherMinorVersion_gte_isFalse() {
+        XCTAssertFalse(version123 >= "1.3.3")
+    }
+    
+    func test_againstHigherPatchVersion_gte_isFalse() {
+        XCTAssertFalse(version123 >= "1.2.4")
+    }
+    
+    func test_againstEqualVersion_gte_isTrue() {
+        XCTAssertTrue(version123 >= "1.2.3")
+    }
+    
+    func test_againstLowerMajorVersion_lte_isFalse() {
+        XCTAssertFalse(version123 <= "0.2.3")
+    }
+    
+    func test_againstLowerMinorVersion_lte_isFalse() {
+        XCTAssertFalse(version123 <= "1.1.3")
+    }
+    
+    func test_againstLowerPatchVersion_lte_isTrue() {
+        XCTAssertTrue(version123 >= "1.2.2")
+    }
+    
+    func test_againstHigherMajorVersion_lte_isTrue() {
+        XCTAssertTrue(version123 <= "2.2.3")
+    }
+    
+    func test_againstHigherMinorVersion_lte_isTrue() {
+        XCTAssertTrue(version123 <= "1.3.3")
+    }
+    
+    func test_againstHigherPatchVersion_gte_isTrue() {
+        XCTAssertTrue(version123 <= "1.2.4")
+    }
+    
+    func test_againstEqualVersion_lte_isTrue() {
+        XCTAssertTrue(version123 <= "1.2.3")
+    }
+    
 }
