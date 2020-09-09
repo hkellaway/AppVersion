@@ -66,8 +66,8 @@ class AppVersionTests: XCTestCase {
         XCTAssertFalse(version123 <= "1.1.3")
     }
     
-    func test_againstLowerPatchVersion_lte_isTrue() {
-        XCTAssertTrue(version123 >= "1.2.2")
+    func test_againstLowerPatchVersion_lte_isFalse() {
+        XCTAssertFalse(version123 <= "1.2.2")
     }
     
     func test_againstHigherMajorVersion_lte_isTrue() {

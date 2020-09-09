@@ -8,24 +8,6 @@
 
 A Swift μ-Library for determining app version
 
-## Getting Started
-
-### Installation with Swift Package Manager
-
-See [Adding Package Dependencies to Your App](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app). Point to the desired version or the `trunk` branch.
-
-### Installation with CocoaPods
-
-```ruby
-pod 'AppVersion', :git => 'https://github.com/hkellaway/AppVersion.git', :branch => 'trunk'
-```
-
-### Installation with Carthage
-
-```
-github "hkellaway/AppVersion" "trunk"
-```
-
 ## Usage
 
 AppVersion is a simple little library that offers a structured type around typical app versioning. It currently supports the format of `major.minor.patch`, a subspecies of [Semver](https://semver.org/).
@@ -33,7 +15,7 @@ AppVersion is a simple little library that offers a structured type around typic
 ### Retrieving from Bundle
 
 ``` swift
-let appVersion: AppVersion? = .fromBundle
+let currentAppVersion: AppVersion? = .fromBundle
 ```
 
 ### Creation from String
@@ -50,9 +32,26 @@ Comparison operations (`==`, `>`, `<`, etc.) work seamlessly:
 
 ``` swift
 let minimumAppVersion: AppVersion = "2.0.0"
-guard AppVersion.fromBundle! >= minimumAppVersion else {
-    // send user to App Store
+guard let currentAppVersion: AppVersion = .fromBundle, currentAppVersion >= minimumAppVersion else {
+  // send user to App Store
 }
+```
+## Installation
+
+### Swift Package Manager
+
+See [Adding Package Dependencies to Your App](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app). Point to the desired version or the `trunk` branch.
+
+### CocoaPods
+
+```ruby
+pod 'AppVersion', :git => 'https://github.com/hkellaway/AppVersion.git', :branch => 'trunk'
+```
+
+### Carthage
+
+```
+github "hkellaway/AppVersion" "trunk"
 ```
 
 ## Credits

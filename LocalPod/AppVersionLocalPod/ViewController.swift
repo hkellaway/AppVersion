@@ -25,6 +25,12 @@ class ViewController: UIViewController {
         
         let appVersion: AppVersion? = .fromBundle
         versionLabel.text = "Version \(appVersion ?? "Unknown :(")"
+        
+        let minimumAppVersion: AppVersion = "0.1.0"
+        guard let currentAppVersion: AppVersion = .fromBundle, currentAppVersion >= minimumAppVersion else {
+            // send user to App Store
+            fatalError()
+        }
     }
 
 }
