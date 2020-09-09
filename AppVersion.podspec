@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.platforms        = { :ios => "13.0" }
   s.requires_arc     = true
 
-  s.source_files     = 'Sources/*.{swift}'
+  s.source_files     = 'Sources/AppVersion/*.{swift}'
 
 end
