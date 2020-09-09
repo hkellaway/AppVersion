@@ -1,6 +1,6 @@
 {
   "name": "AppVersion",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "summary": "A Swift μ-Library for determining app version",
   "description": "A Swift μ-Library for determining app version.",
   "homepage": "https://github.com/hkellaway/AppVersion",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/hkellaway/AppVersion.git",
-    "tag": "0.2.0"
+    "tag": "0.1.0"
   },
   "swift_versions": "5.0",
   "platforms": {

@@ -1,5 +1,5 @@
 PODS:
-  - AppVersion (0.2.0)
+  - AppVersion (0.1.0)
 
 DEPENDENCIES:
   - AppVersion (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AppVersion: 832643a4f59410cc5e7d00bfa1ddb4e0b48a1d1e
+  AppVersion: 704936b4f6614032684df2b91cb9ed4c8371fb45
 
 PODFILE CHECKSUM: f2398af975cce41676d7b42bb2bc5eea99466854
 

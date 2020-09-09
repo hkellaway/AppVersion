@@ -2,7 +2,6 @@
 ![Swift version](https://img.shields.io/badge/Swift-5.0-orange.svg)
 [![SPM Compatible](https://img.shields.io/badge/SPM-compatible-informational.svg)](https://github.com/apple/swift-package-manager)
 [![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-informational.svg)](https://github.com/CocoaPods/CocoaPods)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-informational.svg)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://github.com/hkellaway/AppVersion/blob/trunk/LICENSE)
 [![Build Status](https://travis-ci.org/hkellaway/AppVersion.svg?branch=trunk)](https://travis-ci.org/hkellaway/AppVersion)
 
@@ -46,12 +45,6 @@ See [Adding Package Dependencies to Your App](https://developer.apple.com/docume
 
 ```ruby
 pod 'AppVersion', :git => 'https://github.com/hkellaway/AppVersion.git', :branch => 'trunk'
-```
-
-### Carthage
-
-```
-github "hkellaway/AppVersion" "trunk"
 ```
 
 ## Credits
