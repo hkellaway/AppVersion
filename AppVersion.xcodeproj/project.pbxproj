@@ -10,6 +10,7 @@
 		2F15B23A2508653B008D85C9 /* AppVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F15B2302508653B008D85C9 /* AppVersion.framework */; };
 		2F15B24D25086625008D85C9 /* AppVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15B24B25086625008D85C9 /* AppVersionTests.swift */; };
 		2F15B2542508662E008D85C9 /* AppVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F15B2512508662E008D85C9 /* AppVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F15B25925086720008D85C9 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15B25825086720008D85C9 /* AppVersion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		2F15B24C25086625008D85C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F15B2512508662E008D85C9 /* AppVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppVersion.h; sourceTree = "<group>"; };
 		2F15B2522508662E008D85C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F15B25825086720008D85C9 /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		2F15B24F2508662E008D85C9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2F15B25825086720008D85C9 /* AppVersion.swift */,
 				2F15B2512508662E008D85C9 /* AppVersion.h */,
 				2F15B2522508662E008D85C9 /* Info.plist */,
 			);
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					2F15B22F2508653B008D85C9 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					2F15B2382508653B008D85C9 = {
 						CreatedOnToolsVersion = 11.5;
@@ -195,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F15B25925086720008D85C9 /* AppVersion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +345,7 @@
 		2F15B2452508653B008D85C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -357,6 +363,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +372,7 @@
 		2F15B2462508653B008D85C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -390,6 +398,7 @@
 		2F15B2482508653B008D85C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -407,6 +416,7 @@
 		2F15B2492508653B008D85C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
