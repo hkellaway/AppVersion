@@ -1,0 +1,16 @@
+PODS:
+  - AppVersion (0.2.0)
+
+DEPENDENCIES:
+  - AppVersion (from `../`)
+
+EXTERNAL SOURCES:
+  AppVersion:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AppVersion: 832643a4f59410cc5e7d00bfa1ddb4e0b48a1d1e
+
+PODFILE CHECKSUM: f2398af975cce41676d7b42bb2bc5eea99466854
+
+COCOAPODS: 1.9.3

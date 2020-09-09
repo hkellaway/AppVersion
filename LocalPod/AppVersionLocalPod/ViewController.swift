@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  AppVersionDemo
+//  AppVersionLocalPod
 //
-//  Created by Harlan Kellaway on 9/8/20.
+//  Created by Harlan Kellaway on 9/9/20.
 //  Copyright © 2020 Harlan Kellaway. All rights reserved.
 //
 

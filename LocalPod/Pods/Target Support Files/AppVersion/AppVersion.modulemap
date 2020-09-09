@@ -1,0 +1,6 @@
+framework module AppVersion {
+  umbrella header "AppVersion-umbrella.h"
+
+  export *
+  module * { export * }
+}
