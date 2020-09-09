@@ -26,3 +26,13 @@
 //
 
 import Foundation
+
+public struct AppVersion {
+    
+    public init() { }
+    
+    public func speak() -> String {
+        return "Hello World"
+    }
+    
+}
