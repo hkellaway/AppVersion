@@ -1,0 +1,25 @@
+{
+  "name": "AppVersion",
+  "version": "0.1.0",
+  "summary": "A Swift μ-Library for determining app version",
+  "description": "A Swift μ-Library for determining app version.",
+  "homepage": "https://github.com/hkellaway/AppVersion",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Harlan Kellaway": "harlan.github@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/hkellaway/AppVersion.git",
+    "tag": "0.1.0"
+  },
+  "swift_versions": "5.0",
+  "platforms": {
+    "ios": "13.0"
+  },
+  "requires_arc": true,
+  "source_files": "Sources/*.{swift}",
+  "swift_version": "5.0"
+}
