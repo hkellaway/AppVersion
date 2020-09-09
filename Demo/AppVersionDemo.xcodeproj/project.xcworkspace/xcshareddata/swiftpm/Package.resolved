@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AppVersion",
+        "repositoryURL": "https://github.com/hkellaway/AppVersion",
+        "state": {
+          "branch": "trunk",
+          "revision": "2a39e741bbc181ec961dc82ba58ead1a7f3570c2",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
