@@ -35,7 +35,7 @@ let appVersion: AppVersion? = .fromBundle
 AppVersion can conveniently be created from strings:
 
 ``` swift
-let appVersion: AppVersion? = "1.2.3"
+let appVersion: AppVersion = "1.2.3"
 ```
 
 ### Comparison
