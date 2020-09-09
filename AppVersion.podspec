@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name             = "AppVersion"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "A Swift μ-Library for determining app version"
   s.description      = "A Swift μ-Library for determining app version."
   s.homepage         = "https://github.com/hkellaway/AppVersion"

@@ -11,7 +11,7 @@ A Swift μ-Library for determining app version
 ### Installation with CocoaPods
 
 ```ruby
-pod 'AppVersion', :git => 'https://github.com/hkellaway/AppVersion.git', :tag => '0.1.0'
+pod 'AppVersion', :git => 'https://github.com/hkellaway/AppVersion.git', :branch => 'trunk'
 ```
 
 ### Installation with Carthage
