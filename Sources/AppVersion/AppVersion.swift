@@ -49,7 +49,7 @@ public struct AppVersion: Comparable, Equatable, ExpressibleByStringLiteral, Cus
   }
 
   public init?(rawValue: String) {
-    let versionComponents = Array(rawValue.components(separatedBy: ".")).map { Int($0) }.compactMap { $0 }
+    let versionComponents = Array(rawValue.components(separatedBy: ".")).map { Int($0) }.compactMap { $0 }.filter { $0 >= 0 }
 
     guard versionComponents.count == 3 else {
       return nil

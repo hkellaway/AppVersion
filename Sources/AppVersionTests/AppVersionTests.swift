@@ -24,6 +24,9 @@ class AppVersionTests: XCTestCase {
         XCTAssertNil(AppVersion(rawValue: "0.0"))
         XCTAssertNil(AppVersion(rawValue: "1.0"))
         XCTAssertNil(AppVersion(rawValue: "1.0.0.0"))
+        XCTAssertNil(AppVersion(rawValue: "-1.2.3"))
+        XCTAssertNil(AppVersion(rawValue: "1.-2.3"))
+        XCTAssertNil(AppVersion(rawValue: "1.2.-3"))
     }
     
     func test_againstEqual_equal_isTrue() {
