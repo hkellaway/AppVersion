@@ -13,6 +13,16 @@ class AppVersionTests: XCTestCase {
     
     let version123: AppVersion = "1.2.3"
     
+    // MARK: - SemVer
+    
+    func test_whenGreaterThanMajorOne_isStable_isTrue() {
+        XCTAssertTrue(version123.isStable)
+        XCTAssertTrue(AppVersion(rawValue: "1.0.0")!.isStable)
+    }
+    
+    func test_whenHasLeadingZero_isStable_isFalse() {
+        XCTAssertFalse(AppVersion(rawValue: "0.1.2")!.isStable)
+    }
     func test_init_fromValidString_isSuccessful() {
         XCTAssertNotNil(AppVersion(rawValue: "2.0.0"))
         XCTAssertNotNil(AppVersion(rawValue: "1.4.20"))

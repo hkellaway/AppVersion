@@ -12,7 +12,7 @@
 		2F15B26225087918008D85C9 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15B25F25087918008D85C9 /* AppVersion.swift */; };
 		2F15B26725087A90008D85C9 /* AppVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15B26425087A8C008D85C9 /* AppVersionTests.swift */; };
 		DCEC566B251AC954004803DA /* String+AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC566A251AC954004803DA /* String+AppVersion.swift */; };
-		DCEC566D251AC9A2004803DA /* Int+AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC566C251AC9A2004803DA /* Int+AppVersion.swift */; };
+		DCEC566F251ACF9C004803DA /* Int+AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC566E251ACF9B004803DA /* Int+AppVersion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 		2F15B26325087A8C008D85C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Sources/AppVersionTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		2F15B26425087A8C008D85C9 /* AppVersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppVersionTests.swift; path = Sources/AppVersionTests/AppVersionTests.swift; sourceTree = SOURCE_ROOT; };
 		DCEC566A251AC954004803DA /* String+AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+AppVersion.swift"; path = "AppVersion/String+AppVersion.swift"; sourceTree = "<group>"; };
-		DCEC566C251AC9A2004803DA /* Int+AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+AppVersion.swift"; sourceTree = "<group>"; };
+		DCEC566E251ACF9B004803DA /* Int+AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+AppVersion.swift"; path = "AppVersion/Int+AppVersion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				2F15B25F25087918008D85C9 /* AppVersion.swift */,
-				DCEC566C251AC9A2004803DA /* Int+AppVersion.swift */,
+				DCEC566E251ACF9B004803DA /* Int+AppVersion.swift */,
 				DCEC566A251AC954004803DA /* String+AppVersion.swift */,
 				2F15B25D25087918008D85C9 /* AppVersion.h */,
 				2F15B25E25087918008D85C9 /* Info.plist */,
@@ -205,7 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCEC566D251AC9A2004803DA /* Int+AppVersion.swift in Sources */,
+				DCEC566F251ACF9C004803DA /* Int+AppVersion.swift in Sources */,
 				2F15B26225087918008D85C9 /* AppVersion.swift in Sources */,
 				DCEC566B251AC954004803DA /* String+AppVersion.swift in Sources */,
 			);

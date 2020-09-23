@@ -65,6 +65,12 @@ public struct AppVersion: Comparable, Equatable, ExpressibleByStringLiteral, Cus
     minor = versionComponents[1]
     patch = versionComponents[2]
   }
+    
+  // MARK: - SemVer
+    
+  public var isStable: Bool {
+      return self >= AppVersion(rawValue: "1.0.0")!
+  }
 
 }
 
