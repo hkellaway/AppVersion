@@ -27,7 +27,7 @@
 
 import Foundation
 
-public extension Int {
+extension Int {
     
     var isNonNegative: Bool {
         return self >= 0

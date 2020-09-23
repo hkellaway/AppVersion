@@ -20,13 +20,45 @@ class AppVersionTests: XCTestCase {
         XCTAssertNotNil(AppVersion(rawValue: "v1.4.20"))
     }
     
-    func test_whenGreaterThanMajorOne_isStable_isTrue() {
-        XCTAssertTrue(version123.isStable)
-        XCTAssertTrue(AppVersion(rawValue: "1.0.0")!.isStable)
+    func test_whenGreaterThanMajorOne_isPublic_isTrue() {
+        XCTAssertTrue(version123.isPublic)
+        XCTAssertTrue(AppVersion(rawValue: "1.0.0")!.isPublic)
     }
     
-    func test_whenHasLeadingZero_isStable_isFalse() {
+    func test_whenHasLeadingZero_isPublic_isFalse() {
+        XCTAssertFalse(AppVersion(rawValue: "0.1.2")!.isPublic)
+    }
+    
+    func test_whenIsPublic_andNotPreRelease_isStable_isTrue() {
+        XCTAssertTrue(version123.isStable)
+    }
+    
+    func test_whenNotPublic_isStable_isFalse() {
         XCTAssertFalse(AppVersion(rawValue: "0.1.2")!.isStable)
+    }
+    
+    func test_whenIsPreRelase_isStable_isFalse() {
+        let given: AppVersion = AppVersion(rawValue: "1.2.3-beta.4") ?? AppVersion(rawValue: "0.0.0")!
+        XCTAssertFalse(given.isStable)
+    }
+    
+    func test_whenValidPreRelease_populatesPreReleaseIdentifiers() {
+        XCTAssertEqual(["beta"], AppVersion(rawValue: "1.2.3-beta")!.preReleaseIdentifiers)
+        XCTAssertEqual(["beta", "x", "y", "z"], AppVersion(rawValue: "1.2.3-beta-x-y-z")!.preReleaseIdentifiers)
+    }
+    
+    func test_init_withInvalidPreRelease_fails() {
+        XCTAssertNil(AppVersion(rawValue: "1.2.3-"))
+        XCTAssertNil(AppVersion(rawValue: "1.2.3-$"))
+        XCTAssertNil(AppVersion(rawValue: "1.2.3-beta-01"))
+    }
+    
+    func test_againstEqualVersionAndPreRelease_equal_isTrue() {
+        XCTAssertEqual(AppVersion(rawValue: "1.2.3-beta")!, AppVersion(rawValue: "1.2.3-beta")!)
+    }
+    
+    func test_againstEqualVersionAndDiffPreRelease_equal_isFalse() {
+        XCTAssertNotEqual(AppVersion(rawValue: "1.2.3-alpha")!, AppVersion(rawValue: "1.2.3-beta")!)
     }
     
     func test_nextMajor_isSuccessful() {
@@ -46,6 +78,8 @@ class AppVersionTests: XCTestCase {
     func test_init_fromValidString_isSuccessful() {
         XCTAssertNotNil(AppVersion(rawValue: "2.0.0"))
         XCTAssertNotNil(AppVersion(rawValue: "1.4.20"))
+        XCTAssertNotNil(AppVersion(rawValue: " 2.0.0"))
+        XCTAssertNotNil(AppVersion(rawValue: "1.0.0 "))
     }
     
     func test_init_fromInvalidString_isFailure() {

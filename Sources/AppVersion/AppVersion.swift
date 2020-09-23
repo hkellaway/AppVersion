@@ -31,6 +31,7 @@ public struct AppVersion: Comparable, Equatable, ExpressibleByStringLiteral, Cus
   public let major: Int
   public let minor: Int
   public let patch: Int
+  public let preReleaseIdentifiers: ArraySlice<String>
   public let rawValue: String
     
   public var description: String {
@@ -49,7 +50,19 @@ public struct AppVersion: Comparable, Equatable, ExpressibleByStringLiteral, Cus
   }
 
   public init?(rawValue: String) {
-    let versionComponents = Array(rawValue
+    let normalVersionAndPreRelease = Array(rawValue
+        .trimmingCharacters(in: .whitespacesAndNewlines)
+        .components(separatedBy: "-"))
+    let preReleaseIdentifiers = normalVersionAndPreRelease.dropFirst()
+    
+    guard !(normalVersionAndPreRelease.contains("")),
+        !(preReleaseIdentifiers.contains { $0.hasLeadingZero }),
+        !(preReleaseIdentifiers.contains { !($0.isAlphanumeric) }),
+        let rawNormalVersion = normalVersionAndPreRelease.first else {
+        return nil
+    }
+    
+    let normalVersionComponents = Array(rawNormalVersion
         .removeFirstCharacter(ifMatches: "v")
         .components(separatedBy: "."))
         .filter { !$0.hasLeadingZero }
@@ -57,21 +70,29 @@ public struct AppVersion: Comparable, Equatable, ExpressibleByStringLiteral, Cus
         .compactMap { $0 }
         .filter { $0.isNonNegative }
 
-    guard versionComponents.count == 3 else {
+    guard normalVersionComponents.count == 3 else {
       return nil
     }
 
     self.rawValue = rawValue
-
-    major = versionComponents[0]
-    minor = versionComponents[1]
-    patch = versionComponents[2]
+    self.major = normalVersionComponents[0]
+    self.minor = normalVersionComponents[1]
+    self.patch = normalVersionComponents[2]
+    self.preReleaseIdentifiers = preReleaseIdentifiers
   }
     
   // MARK: - SemVer
     
   public var isStable: Bool {
-      return self >= AppVersion(rawValue: "1.0.0")!
+    return isPublic && !isPreRelease
+  }
+    
+  public var isPublic: Bool {
+    return self >= AppVersion(rawValue: "1.0.0")!
+  }
+    
+  public var isPreRelease: Bool {
+    return !(preReleaseIdentifiers.isEmpty)
   }
   
   public func nextMajor() -> AppVersion {
@@ -115,4 +136,5 @@ public func ==(lhs: AppVersion, rhs: AppVersion) -> Bool {
   return lhs.major == rhs.major
     && lhs.minor == rhs.minor
     && lhs.patch == rhs.patch
+    && lhs.preReleaseIdentifiers == rhs.preReleaseIdentifiers
 }

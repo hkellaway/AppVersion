@@ -78,9 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				DCEC5671251AD617004803DA /* AppVersion.swift */,
+				DCEC5674251AD617004803DA /* Int+AppVersion.swift */,
 				DCEC5672251AD617004803DA /* String+AppVersion.swift */,
 				DCEC5673251AD617004803DA /* AppVersion.h */,
-				DCEC5674251AD617004803DA /* Int+AppVersion.swift */,
 				DCEC5675251AD617004803DA /* Info.plist */,
 			);
 			name = AppVersion;

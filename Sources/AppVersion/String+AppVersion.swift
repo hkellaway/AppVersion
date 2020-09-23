@@ -27,7 +27,14 @@
 
 import Foundation
 
-public extension String {
+extension String {
+    
+    var isAlphanumeric: Bool {
+        guard !isEmpty else {
+            return false
+        }
+        return range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
     
     var hasLeadingZero: Bool {
         guard !isEmpty else {
