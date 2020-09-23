@@ -49,7 +49,9 @@ public struct AppVersion: Comparable, Equatable, ExpressibleByStringLiteral, Cus
   }
 
   public init?(rawValue: String) {
-    let versionComponents = Array(rawValue.components(separatedBy: "."))
+    let versionComponents = Array(rawValue
+        .removeFirstCharacter(ifMatches: "v")
+        .components(separatedBy: "."))
         .filter { !$0.hasLeadingZero }
         .map { Int($0) }
         .compactMap { $0 }

@@ -36,4 +36,11 @@ public extension String {
         return count > 1 && first == "0"
     }
     
+    func removeFirstCharacter(ifMatches character: Character) -> String {
+        if let first = first, first == character {
+            return String(self.dropFirst())
+        }
+        return self
+    }
+    
 }
