@@ -7,7 +7,7 @@
 
 A Swift μ-Library for determining app version
 
-## Usage
+## Basic Usage
 
 AppVersion is a simple little library that offers a structured type around typical app versioning. It currently supports the format of `major.minor.patch`, a subspecies of [Semver](https://semver.org/).
 
@@ -35,6 +35,27 @@ guard let currentAppVersion: AppVersion = .fromBundle, currentAppVersion >= mini
   // send user to App Store
 }
 ```
+
+## SemVer Utility
+
+### Determining Stability
+
+To determine whether the version is stable / has a public API:
+
+``` swift
+appVersion.isStable
+```
+
+### Next Version
+
+To detemrine the next version:
+
+``` swift
+appVersion.nextMajor() // i.e. 1.2.3 goes to 2.0.0
+appVersion.nextMinor() // i.e. 1.2.3 goes to 1.3.0
+appVersion.nextPatch() // i.e. 1.2.3 goes to 1.2.4
+```
+
 ## Installation
 
 ### Swift Package Manager

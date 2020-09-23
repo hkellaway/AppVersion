@@ -23,6 +23,21 @@ class AppVersionTests: XCTestCase {
     func test_whenHasLeadingZero_isStable_isFalse() {
         XCTAssertFalse(AppVersion(rawValue: "0.1.2")!.isStable)
     }
+    
+    func test_nextMajor_isSuccessful() {
+        XCTAssertEqual(version123.nextMajor(), AppVersion(rawValue: "2.0.0")!)
+    }
+    
+    func test_nextMinor_isSuccessful() {
+        XCTAssertEqual(version123.nextMinor(), AppVersion(rawValue: "1.3.0")!)
+    }
+
+    func test_nextPatch_isSuccessful() {
+        XCTAssertEqual(version123.nextPatch(), AppVersion(rawValue: "1.2.4")!)
+    }
+    
+    // MARK: - Simple Comparison
+    
     func test_init_fromValidString_isSuccessful() {
         XCTAssertNotNil(AppVersion(rawValue: "2.0.0"))
         XCTAssertNotNil(AppVersion(rawValue: "1.4.20"))
@@ -44,6 +59,10 @@ class AppVersionTests: XCTestCase {
     
     func test_againstEqual_equal_isTrue() {
         XCTAssertTrue(version123 == "1.2.3")
+    }
+    
+    func test_againstNotEqual_equal_isFalse() {
+        XCTAssertFalse(version123 == "3.2.1")
     }
     
     func test_againstLowerMajorVersion_gte_isTrue() {

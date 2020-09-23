@@ -71,6 +71,18 @@ public struct AppVersion: Comparable, Equatable, ExpressibleByStringLiteral, Cus
   public var isStable: Bool {
       return self >= AppVersion(rawValue: "1.0.0")!
   }
+  
+  public func nextMajor() -> AppVersion {
+      return AppVersion(rawValue: "\(major+1).0.0")!
+  }
+  
+  public func nextMinor() -> AppVersion {
+      return AppVersion(rawValue: "\(major).\(minor+1).0")!
+  }
+  
+  public func nextPatch() -> AppVersion {
+      return AppVersion(rawValue: "\(major).\(minor).\(patch+1)")!
+  }
 
 }
 
