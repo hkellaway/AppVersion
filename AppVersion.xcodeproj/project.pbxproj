@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2F15B23A2508653B008D85C9 /* AppVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F15B2302508653B008D85C9 /* AppVersion.framework */; };
-		2F15B26025087918008D85C9 /* AppVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F15B25D25087918008D85C9 /* AppVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F15B26225087918008D85C9 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15B25F25087918008D85C9 /* AppVersion.swift */; };
-		2F15B26725087A90008D85C9 /* AppVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15B26425087A8C008D85C9 /* AppVersionTests.swift */; };
-		DCEC566B251AC954004803DA /* String+AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC566A251AC954004803DA /* String+AppVersion.swift */; };
-		DCEC566F251ACF9C004803DA /* Int+AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC566E251ACF9B004803DA /* Int+AppVersion.swift */; };
+		DCEC5676251AD617004803DA /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC5671251AD617004803DA /* AppVersion.swift */; };
+		DCEC5677251AD617004803DA /* String+AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC5672251AD617004803DA /* String+AppVersion.swift */; };
+		DCEC5678251AD617004803DA /* AppVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCEC5673251AD617004803DA /* AppVersion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCEC5679251AD617004803DA /* Int+AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC5674251AD617004803DA /* Int+AppVersion.swift */; };
+		DCEC5680251AD627004803DA /* AppVersionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEC567C251AD61F004803DA /* AppVersionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,13 +28,13 @@
 /* Begin PBXFileReference section */
 		2F15B2302508653B008D85C9 /* AppVersion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppVersion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F15B2392508653B008D85C9 /* AppVersionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppVersionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F15B25D25087918008D85C9 /* AppVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppVersion.h; path = AppVersion/AppVersion.h; sourceTree = "<group>"; };
-		2F15B25E25087918008D85C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AppVersion/Info.plist; sourceTree = "<group>"; };
-		2F15B25F25087918008D85C9 /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppVersion.swift; path = AppVersion/AppVersion.swift; sourceTree = "<group>"; };
-		2F15B26325087A8C008D85C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Sources/AppVersionTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		2F15B26425087A8C008D85C9 /* AppVersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppVersionTests.swift; path = Sources/AppVersionTests/AppVersionTests.swift; sourceTree = SOURCE_ROOT; };
-		DCEC566A251AC954004803DA /* String+AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+AppVersion.swift"; path = "AppVersion/String+AppVersion.swift"; sourceTree = "<group>"; };
-		DCEC566E251ACF9B004803DA /* Int+AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Int+AppVersion.swift"; path = "AppVersion/Int+AppVersion.swift"; sourceTree = "<group>"; };
+		DCEC5671251AD617004803DA /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
+		DCEC5672251AD617004803DA /* String+AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AppVersion.swift"; sourceTree = "<group>"; };
+		DCEC5673251AD617004803DA /* AppVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppVersion.h; sourceTree = "<group>"; };
+		DCEC5674251AD617004803DA /* Int+AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+AppVersion.swift"; sourceTree = "<group>"; };
+		DCEC5675251AD617004803DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCEC567C251AD61F004803DA /* AppVersionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionTests.swift; sourceTree = "<group>"; };
+		DCEC567D251AD61F004803DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +59,8 @@
 		2F15B2262508653B008D85C9 = {
 			isa = PBXGroup;
 			children = (
-				2F15B24F2508662E008D85C9 /* Sources */,
-				2F15B24A25086625008D85C9 /* Tests */,
+				DCEC5670251AD617004803DA /* AppVersion */,
+				DCEC567B251AD61F004803DA /* AppVersionTests */,
 				2F15B2312508653B008D85C9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,25 +74,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2F15B24A25086625008D85C9 /* Tests */ = {
+		DCEC5670251AD617004803DA /* AppVersion */ = {
 			isa = PBXGroup;
 			children = (
-				2F15B26425087A8C008D85C9 /* AppVersionTests.swift */,
-				2F15B26325087A8C008D85C9 /* Info.plist */,
+				DCEC5671251AD617004803DA /* AppVersion.swift */,
+				DCEC5672251AD617004803DA /* String+AppVersion.swift */,
+				DCEC5673251AD617004803DA /* AppVersion.h */,
+				DCEC5674251AD617004803DA /* Int+AppVersion.swift */,
+				DCEC5675251AD617004803DA /* Info.plist */,
 			);
-			path = Tests;
+			name = AppVersion;
+			path = Sources/AppVersion;
 			sourceTree = "<group>";
 		};
-		2F15B24F2508662E008D85C9 /* Sources */ = {
+		DCEC567B251AD61F004803DA /* AppVersionTests */ = {
 			isa = PBXGroup;
 			children = (
-				2F15B25F25087918008D85C9 /* AppVersion.swift */,
-				DCEC566E251ACF9B004803DA /* Int+AppVersion.swift */,
-				DCEC566A251AC954004803DA /* String+AppVersion.swift */,
-				2F15B25D25087918008D85C9 /* AppVersion.h */,
-				2F15B25E25087918008D85C9 /* Info.plist */,
+				DCEC567C251AD61F004803DA /* AppVersionTests.swift */,
+				DCEC567D251AD61F004803DA /* Info.plist */,
 			);
-			path = Sources;
+			name = AppVersionTests;
+			path = Sources/AppVersionTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,7 +104,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F15B26025087918008D85C9 /* AppVersion.h in Headers */,
+				DCEC5678251AD617004803DA /* AppVersion.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,9 +207,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCEC566F251ACF9C004803DA /* Int+AppVersion.swift in Sources */,
-				2F15B26225087918008D85C9 /* AppVersion.swift in Sources */,
-				DCEC566B251AC954004803DA /* String+AppVersion.swift in Sources */,
+				DCEC5679251AD617004803DA /* Int+AppVersion.swift in Sources */,
+				DCEC5676251AD617004803DA /* AppVersion.swift in Sources */,
+				DCEC5677251AD617004803DA /* String+AppVersion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F15B26725087A90008D85C9 /* AppVersionTests.swift in Sources */,
+				DCEC5680251AD627004803DA /* AppVersionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
