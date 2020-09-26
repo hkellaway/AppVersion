@@ -66,8 +66,7 @@ public struct AppVersion: Comparable, Equatable, ExpressibleByStringLiteral, Cus
         .removeFirstCharacter(ifMatches: "v")
         .components(separatedBy: "."))
         .filter { !$0.hasLeadingZero }
-        .map { Int($0) }
-        .compactMap { $0 }
+        .compactMap { Int($0) }
         .filter { $0.isNonNegative }
 
     guard normalVersionComponents.count == 3 else {
