@@ -13,7 +13,7 @@ class AppVersionTests: XCTestCase {
   
   let version123: AppVersion = "1.2.3"
   
-  // MARK: - Normal Version Comparison
+  // MARK: - Normal Version
   
   func test_init_fromValidString_isSuccessful() {
     XCTAssertNotNil(AppVersion(rawValue: "2.0.0"))
@@ -100,7 +100,7 @@ class AppVersionTests: XCTestCase {
     XCTAssertTrue(version123 <= "1.2.3")
   }
   
-  // MARK: - SemVer
+  // MARK: - Semantic Verion
   
   func test_canStartWithLetterV() {
     XCTAssertNotNil(AppVersion(rawValue: "v2.0.0"))
@@ -125,8 +125,7 @@ class AppVersionTests: XCTestCase {
   }
   
   func test_whenIsPreRelase_isStable_isFalse() {
-    let given: AppVersion = AppVersion(rawValue: "1.2.3-beta.4") ?? AppVersion(rawValue: "0.0.0")!
-    XCTAssertFalse(given.isStable)
+    XCTAssertFalse(AppVersion(rawValue: "1.2.3-beta")!.isStable)
   }
   
   func test_whenValidPreRelease_populatesPreReleaseIdentifiers() {
@@ -146,6 +145,14 @@ class AppVersionTests: XCTestCase {
   
   func test_againstEqualVersionAndDiffPreRelease_equal_isFalse() {
     XCTAssertNotEqual(AppVersion(rawValue: "1.2.3-alpha")!, AppVersion(rawValue: "1.2.3-beta")!)
+  }
+  
+  func test_againstPreRelease_withSameNormalVersion_gt_isTrue() {
+    XCTAssertTrue(version123 > AppVersion(rawValue: "1.2.3-beta")!)
+  }
+  
+  func test_againstPreRelease_withSameNormalVersion_lt_isFalse() {
+    XCTAssertFalse(version123 < AppVersion(rawValue: "1.2.3-beta")!)
   }
   
   func test_nextMajor_isSuccessful() {
