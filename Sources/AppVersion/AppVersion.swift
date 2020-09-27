@@ -125,8 +125,9 @@ public func <(lhs: AppVersion, rhs: AppVersion) -> Bool {
     return lhs.patch < rhs.patch
   }
 
-  // lhs and rhs are equal
-  return false
+  // lhs and rhs have equal normal versions;
+  // lhs is < if isPreRelease, otherwise equal
+  return lhs.isPreRelease
 }
 
 // MARK: Equatable
