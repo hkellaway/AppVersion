@@ -28,9 +28,9 @@
 import Foundation
 
 extension Int {
-    
-    var isNonNegative: Bool {
-        return self >= 0
-    }
-    
+  
+  var isNonNegative: Bool {
+    return self >= 0
+  }
+  
 }

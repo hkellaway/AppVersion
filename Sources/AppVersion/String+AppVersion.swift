@@ -28,26 +28,26 @@
 import Foundation
 
 extension String {
-    
-    var isAlphanumeric: Bool {
-        guard !isEmpty else {
-            return false
-        }
-        return range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+  
+  var isAlphanumeric: Bool {
+    guard !isEmpty else {
+      return false
     }
-    
-    var hasLeadingZero: Bool {
-        guard !isEmpty else {
-            return false
-        }
-        return count > 1 && first == "0"
+    return range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+  }
+  
+  var hasLeadingZero: Bool {
+    guard !isEmpty else {
+      return false
     }
-    
-    func removeFirstCharacter(ifMatches character: Character) -> String {
-        if let first = first, first == character {
-            return String(self.dropFirst())
-        }
-        return self
+    return count > 1 && first == "0"
+  }
+  
+  func removeFirstCharacter(ifMatches character: Character) -> String {
+    if let first = first, first == character {
+      return String(self.dropFirst())
     }
-    
+    return self
+  }
+  
 }
