@@ -100,7 +100,7 @@ class AppVersionTests: XCTestCase {
     XCTAssertTrue(version123 <= "1.2.3")
   }
   
-  // MARK: - Semantic Verion
+  // MARK: - Semantic Version
   
   func test_canStartWithLetterV() {
     XCTAssertNotNil(AppVersion(rawValue: "v2.0.0"))
@@ -131,6 +131,7 @@ class AppVersionTests: XCTestCase {
   func test_whenValidPreRelease_populatesPreReleaseIdentifiers() {
     XCTAssertEqual(["beta"], AppVersion(rawValue: "1.2.3-beta")!.preReleaseIdentifiers)
     XCTAssertEqual(["beta", "x", "y", "z"], AppVersion(rawValue: "1.2.3-beta-x-y-z")!.preReleaseIdentifiers)
+    XCTAssertEqual(["beta.4"], AppVersion(rawValue: "1.2.3-beta.4")!.preReleaseIdentifiers)
   }
   
   func test_init_withInvalidPreRelease_fails() {

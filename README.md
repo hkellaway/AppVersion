@@ -5,11 +5,9 @@
 [![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://github.com/hkellaway/AppVersion/blob/trunk/LICENSE)
 [![Build Status](https://travis-ci.org/hkellaway/AppVersion.svg?branch=trunk)](https://travis-ci.org/hkellaway/AppVersion)
 
-A Swift μ-Library for determining app version
+AppVersion is a Swift μ-Library offering a structured type around iOS app versions that adhere to Semantic Versioning.
 
 ## Basic Usage
-
-AppVersion is a simple little library that offers a structured type around typical app versioning. It currently supports the format of `major.minor.patch`, a subspecies of [Semver](https://semver.org/).
 
 ### Retrieving from Bundle
 
@@ -38,12 +36,12 @@ guard let currentAppVersion: AppVersion = .fromBundle, currentAppVersion >= mini
 
 ## SemVer Utility
 
-### Determining Stability
-
-To determine whether the version is stable / has a public API:
+### Stability
 
 ``` swift
 appVersion.isStable
+appVersion.isPublic
+appVersion.isPreRelease
 ```
 
 ### Next Version
@@ -54,6 +52,14 @@ To detemrine the next version:
 appVersion.nextMajor() // i.e. 1.2.3 goes to 2.0.0
 appVersion.nextMinor() // i.e. 1.2.3 goes to 1.3.0
 appVersion.nextPatch() // i.e. 1.2.3 goes to 1.2.4
+```
+
+### Prefixed with v
+
+Versions prefixed with the common marker of `v` are accepted. i.e.:
+
+``` swift
+let validVersion: AppVersion = "v1.2.3"
 ```
 
 ## Installation
